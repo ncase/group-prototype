@@ -26,6 +26,10 @@ iframe#model{
 #info{
 	width: 530px;
 	float: right;
+	line-height: 1.3em;
+}
+#info b{
+	font-weight: bold;
 }
 #info > div{
 	display: none;
@@ -34,6 +38,7 @@ iframe#model{
 	font-size: 40px;
 	font-weight: 100;
 	margin-bottom: 20px;
+	line-height: 40px;
 }
 .next{
 	margin-top: 20px;
