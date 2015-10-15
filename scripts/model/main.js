@@ -114,8 +114,8 @@ subscribe("/render",function(){
 
 	// Focus?
 	if(ClickAndDrag.focus){
-		var x = ClickAndDrag.focus.groupNorm.x*Peep.DRAW_SCALE;
-		var y = ClickAndDrag.focus.groupNorm.y*Peep.DRAW_SCALE;
+		var x = ClickAndDrag.focus.groupNormEased.x*Peep.DRAW_SCALE;
+		var y = ClickAndDrag.focus.groupNormEased.y*Peep.DRAW_SCALE;
 		ctx.translate(x,y);
 		ctx.drawImage(focusStar,-10,-10);
 	}

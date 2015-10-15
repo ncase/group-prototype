@@ -18,6 +18,7 @@ function Peep(){
 	self.group = [self];
 	self.groupLimit = 10;
 	self.groupNorm = {x:self.x, y:self.y};
+	self.groupNormEased = {x:self.x, y:self.y};
 
 	// UPDATE - GROUP & NORM
 	self.updateGroup = function(){
@@ -52,6 +53,8 @@ function Peep(){
 			x: totalX/totalNum,
 			y: totalY/totalNum
 		};
+		self.groupNormEased.x = self.groupNormEased.x*0.5 + self.groupNorm.x*0.5;
+		self.groupNormEased.y = self.groupNormEased.y*0.5 + self.groupNorm.y*0.5;
 
 	};
 
