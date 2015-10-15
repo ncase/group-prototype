@@ -1,0 +1,204 @@
+<!doctype>
+<html>
+<head>
+	
+	<!-- Meta -->
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="styles/index.css">
+
+</head>
+<body>
+	<div id="container">
+		<iframe id="model" src="model.html" width="400" height="540" scrolling="no"></iframe>
+		<div id="info">
+			
+			<!-- INTRO -->
+			<div id="info_start" style="display:block">
+
+				<div class="title"><b>INGROUPS &amp; OUTGROUPS</b> PROTOTYPE</div>
+
+				Welcome to Peepworld.
+				In this world, only two things matter:
+				how much you like apples, and how much you like oranges.
+
+				<br><br>
+
+				We can draw these two traits as a 2D graph,
+				and with each Peep's fruit-affinities as a point on that graph.
+				Here, you can see a single Peep whose preferences
+				change slowly and randomly over time.
+
+				<br><br>
+
+				<b>Drag the Peep</b> to change its preferences.
+				<br>
+				<b>Drag the slider</b> to change the simulation speed.
+
+				<div class="next" onclick="sendMessage('generate');">NEXT</div>
+			</div>
+
+
+			<!-- GENERATE -->
+			<div id="info_generate">
+
+				<div class="title">A <b>SOCIETY</b> OF PEEPS</div>
+				
+				Of course, it's not the only Peep here.
+				They're one of a hundred Peeps who live in this very contrived town
+				of Exampleville, Peepworld.
+				
+				<br><br>
+
+				(note: you can still <b>drag peeps around</b>)
+
+				<br><br>
+
+				Right now, they're all just shuffling around randomly,
+				not really caring about each other.
+				But Peeps are social critters, they do care about each other,
+				they all want to feel like they belong to a group.
+				We'll see what happens then...				
+
+				<div class="next" onclick="sendMessage('group');">NEXT</div>
+
+			</div>
+
+			<!-- GROUP -->
+			<div id="info_group">
+
+				<div class="title">WHO'S IN MY <b>IN-GROUP?</b></div>
+				
+				Let's focus on a single Peep.
+				Each Peep considers the 10 Peeps who most closely shares its values
+				to be part of its "in-group", its tribe.
+				Peeps also have a sense of what's normal for their group, the group <i>norm</i>,
+				drawn as a star. 
+
+				<br><br>
+
+				<b>Click a Peep</b> to focus on what it sees as its ingroup.
+				<br><br>
+				<b>Drag the second slider</b> to adjust how many Peeps a Peep will consider part of its ingroup.
+
+				<br><br>
+
+				Right now, the Peeps don't care about moving toward their groups'
+				norm, but now, let's see what happens when they do...
+
+				<div class="next" onclick="sendMessage('cluster');">NEXT</div>
+
+			</div>
+
+			<!-- CLUSTER -->
+			<div id="info_cluster">
+
+				<div class="title"><b>BAM!</b> EVOLVING CULTURE</div>
+				
+				With just a few rules, Peepworld
+				now shows lots of the complex group dynamics we know in our own world.
+				Groups forming spontaneously, from small differences.
+				Groups shifting, splitting apart, swapping members, and coming back together again.
+
+				<br><br>
+
+				(note: you can still <b>drag Peeps</b> and <b>speed up the simulation</b>)
+
+				<br><br>
+
+				Now, group formation is <i>not</i> a bad thing.
+				Most of us want a sense of belonging, and in more practical terms,
+				trust and collective action is easier within a strong ingroup.
+
+				<br><br>
+
+				But there are some dark flipsides to ingroups-and-outgroups,
+				like the "us vs them" mentality, group polarization, and groupthink.
+				And with the help of these Peeps, I think we can explore and understand that fine line.
+
+				<div class="next" onclick="sendMessage('ending');">NEXT</div>
+
+			</div>
+
+			<!-- ENDING -->
+			<div id="info_ending">
+
+				<div class="title">END OF <b>PROTOTYPE</b></div>
+			
+				Every prototype is a question, embodied.
+
+				<br><br>
+
+				My first big question is <b>does this model make sense?</b>
+				It's a very rough interpretation of
+				self-categorization theory.
+				Is my model too contrived or bizarre?
+				Is the interaction compelling?
+
+				<br><br>
+
+				My second big question is <b>what could/should I explain with this?</b>
+				The social psychology of groups underlies a lot of important issues,
+				but maybe I should just focus on one or a few.
+				I could use this model to talk about multiculturalism (mosaic vs melting pot),
+				on group polarization (especially political polarization),
+				or ways to reconcile groups that hate each other (contact hypothesis, robber's cave experiment).
+				
+				<br><br>
+
+				Thanks for playtesting! You're all in <i>my</i> ingroup. ;)
+
+				<br><br>
+
+				<b>&lt;3,</b><br>
+				~ Nicky
+
+				<!--
+				Every prototype is a question, embodied.
+
+				<br><br>
+
+				And I need your help in figuring out possible answer(s).
+				If you want, please leave your thoughts in this short, two-question survey!
+
+				<br><br>
+
+				This model was a very rough interpretation of
+				self-categorization theory,
+				the almost "well-duh" idea that we group people based on similar traits,
+				including ourselves,
+				then make decisions based on perceived group norms.
+				
+				<br><br>
+
+				Thanks for playtesting! You're all in <i>my</i> ingroup. ;)
+
+				<br><br>
+				-->
+
+			</div>
+
+
+		</div>
+	</div>
+</body>
+</html>
+
+<script>
+var model = document.getElementById("model");
+function sendMessage(message){
+
+	// Show just that info box
+	var infoBoxes = document.querySelectorAll("#info > div");
+	for(var i=0;i<infoBoxes.length;i++){
+		infoBoxes[i].style.display = "none";
+	}
+	document.getElementById("info_"+message).style.display = "block";
+
+	// Send message
+	model.contentWindow.postMessage(message, "*");
+
+}
+</script>

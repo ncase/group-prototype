@@ -1,0 +1,45 @@
+<!doctype>
+<html>
+<head>
+	
+	<!-- Meta -->
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="styles/model.css">
+
+</head>
+<body>
+
+	<canvas id="canvas" width="400" height="400" loading="yes"></canvas>
+	
+	<div class="control">
+		simulation speed: <span id="label_speed"></span>
+		<br>
+		<input id="slider_speed" type="range" min="0" max="10" step="1" value="1"/>
+	</div>
+	
+	<div class="control" id="control_size" style="display:none">
+		ingroup size: <span id="label_size"></span>
+		<br>
+		<input id="slider_size" type="range" min="1" max="100" step="1" value="10"/>
+	</div>
+
+</body>
+</html>
+
+<!-- External Libraries -->
+<script src="scripts/libraries/minpubsub.js"></script>
+<script src="scripts/libraries/promise.js"></script>
+<script src="scripts/libraries/stats.min.js"></script>
+
+<!-- Core Engine -->
+<script src="scripts/core/External.js"></script>
+<script src="scripts/core/Mouse.js"></script>
+<script src="scripts/core/Play.js"></script>
+
+<!-- MAIN SCRIPT -->
+<script src="scripts/model/ClickAndDrag.js"></script>
+<script src="scripts/model/Peep.js"></script>
+<script src="scripts/model/main.js"></script>

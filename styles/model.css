@@ -1,0 +1,42 @@
+body {
+	margin: 0;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	font-weight: 100;
+}
+
+div, canvas{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#canvas{
+	border: none;/*2px solid #ccc;*/
+	display:block;
+	width: 400px;
+	height: 400px;
+	background: url(../assets/bg.png);
+	cursor: default;
+}
+#canvas[cursor='grab']{
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: -ms-grab;
+    cursor: grab;
+}
+#canvas[cursor='grabbing']{
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: -ms-grabbing;
+    cursor: grabbing;
+}
+
+.control{
+	margin-top:20px;
+}
+.control > input{
+	width: 390px;
+}
