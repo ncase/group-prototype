@@ -31,6 +31,12 @@ iframe#model{
 #info b{
 	font-weight: bold;
 }
+#info a{
+	color: #cc2727;
+}
+#info a:hover{
+	color: #dd3838;
+}
 #info > div{
 	display: none;
 }
